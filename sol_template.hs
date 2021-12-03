@@ -11,6 +11,7 @@ part2
 
 
 -- Read solution and pass it on
+main :: IO ()
 main = do
     handle <- openFile "input.txt" ReadMode
     contents <- hGetContents handle
