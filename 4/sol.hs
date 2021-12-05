@@ -2,7 +2,6 @@ import System.IO
 import Text.Printf
 import Data.List.Split (splitOn)
 import Data.Maybe
-import qualified Control.Exception as E
 
 --- Part 1 solution
 checkWin :: [[(Int, Bool)]] -> Bool
