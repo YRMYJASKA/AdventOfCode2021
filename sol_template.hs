@@ -1,5 +1,7 @@
 import System.IO
 import Text.Printf
+import Data.Maybe
+import qualified Data.Map as M
 
 --- Part 1 solution
 part1 
@@ -13,12 +15,10 @@ part2
 -- Read solution and pass it on
 main :: IO ()
 main = do
-    handle <- openFile "input.txt" ReadMode
-    contents <- hGetContents handle
+    contentLines <- lines <$> readFile "input.txt"
 
     -- Parsing Here
-    let contentLines = lines contents
-        inputs       = undefined
+    let inputs       = undefined
 
     printf "Part 1: %v \n" (part1 inputs)
     printf "Part 2: %d \n" (part2 inputs)
