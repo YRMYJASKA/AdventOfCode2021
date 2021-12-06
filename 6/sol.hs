@@ -1,5 +1,3 @@
-{-# LANGUAGE OverloadedStrings #-}
-
 import System.IO
 import Text.Printf
 import Data.Maybe
@@ -16,10 +14,8 @@ part1 state turn
   where
     newState = state // [(n-1, state ! n) | n <- [1..8]] // [(6, state ! 7 + state ! 0), (8, state ! 0)]
 
-
 --- Part 2 solution
 part2 = part1
-
 
 -- Read solution and pass it on
 main :: IO ()
