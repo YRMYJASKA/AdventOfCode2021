@@ -1,6 +1,5 @@
-import System.IO
+import System.IO()
 import Text.Printf
-import Debug.Trace
 import Data.Maybe
 import Data.Text (splitOn, pack, unpack)
 import Data.Char (isUpper)
@@ -12,9 +11,9 @@ type Node = String
 type Network = M.Map Node (S.Set Node)
 
 --- Part 1 solution -> Int
-generalSol :: G.Graph -> (G.Vertex -> (String, String, [String])) -> (String -> G.Vertex) -> Bool-> Int
-generalSol g vertexToEntry keyToVertex repeat
-  = pathSearch start S.empty repeat
+generalSol :: G.Graph -> (G.Vertex -> (String, String, [String])) -> (String -> G.Vertex) -> Bool -> Int
+generalSol g vertexToEntry keyToVertex r
+  = pathSearch start S.empty r
   where
     end   = keyToVertex "end"
     start = keyToVertex "start"
@@ -36,7 +35,6 @@ upStr :: String -> Bool
 upStr = isUpper . head
 
 fstT (a, _, _) = a
-sndT (_, b, _) = b
 thrT (_, _, c) = c
 
 
