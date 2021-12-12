@@ -11,7 +11,7 @@ type Grid = Array Int (Array Int (Int, Bool))
 
 computeFlashes :: Grid -> Int -> [(Grid, Int)]
 computeFlashes grid dim
-  = scanl (\(g, _) _ -> let (g', f') = computeIter g in (g',f')) (grid, 0) (repeat 0)
+  = iterate (\(g, _) -> computeIter g) (grid, 0)
   where
     flashAt :: Grid -> Int -> (Int, Int) -> (Grid, Int)
     flashAt g flashes pt@(y, x)
